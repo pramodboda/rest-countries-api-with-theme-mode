@@ -1,0 +1,3 @@
+const CountryCard = () => {
+  return CountryCardContainer;
+};

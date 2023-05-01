@@ -1,12 +1,13 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0);
+import AllCountries from "./pages/AllContries/AllContries";
 
-  return <></>;
+function App() {
+  return (
+    <>
+      <AllCountries />
+    </>
+  );
 }
 
 export default App;
