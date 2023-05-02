@@ -22,7 +22,7 @@ const AppProvider = ({ children }) => {
   };
 
   const lowerSearch = searchByInpVal.toLowerCase();
-  let filteredCountriesData = allContriesData.filter((country) =>
+  const filteredCountriesData = allContriesData.filter((country) =>
     country.name.toLowerCase().includes(lowerSearch)
   );
 

@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
-import AllCountries from "./pages/AllContries/AllContries";
+import AllCountries from "./pages/AllCountries/AllCountries";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
-// import CountryInfo from "./pages/CountryInfo/CountryInfo";
+import CountryPage from "./pages/CountryPage/CountryPage";
 
 function App() {
   return (
@@ -12,8 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<AllCountries />} />
         <Route path="*" element={<PageNotFound />} />
-        {/* <Route path="/country/:name" element={<CountryInfo />} />
-        <Route path="/country/:code" element={<CountryInfo />} /> */}
+        <Route path="/country/:name" element={<CountryPage />} />
+        {/* <Route path="/country/:code" element={<CountryInfo />} /> */}
       </Routes>
     </>
   );
