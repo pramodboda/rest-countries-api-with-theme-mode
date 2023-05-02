@@ -1,14 +1,18 @@
+import { Link } from "react-router-dom";
+
 export const CountryCard = ({ flag, name, currency, dialCode }) => {
   return (
     <>
-      <div>
-        <img src={flag} />
+      <Link to={`/country/${name}`}>
         <div>
-          <p>{name}</p>
-          <p>currency: {currency}</p>
-          <p>dialCode: {dialCode}</p>
+          <img src={flag} />
+          <div>
+            <p>{name}</p>
+            <p>currency: {currency}</p>
+            <p>dialCode: {dialCode}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     </>
   );
 };

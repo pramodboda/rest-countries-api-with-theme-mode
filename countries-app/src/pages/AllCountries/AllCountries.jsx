@@ -4,7 +4,7 @@ import { useAppContext } from "../../context/AppContext";
 import { SearchInput } from "../../components/SearchInput/SearchInput";
 import { CountryCard } from "../../components/CountryCard/CountryCard";
 
-const AllContries = () => {
+const AllCountries = () => {
   const {
     isLoading,
     getAllCountriesData,
@@ -34,4 +34,4 @@ const AllContries = () => {
   );
 };
 
-export default AllContries;
+export default AllCountries
