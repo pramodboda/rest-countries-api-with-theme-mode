@@ -1,39 +1,37 @@
-import { useState, useEffect } from "react";
-import { contriesApiURL } from "../../utils/api";
+import { useEffect } from "react";
+import { useAppContext } from "../../context/AppContext";
 
-import NotFound from "../NotFound/NotFound";
-import axios from "axios";
+import { SearchInput } from "../../components/SearchInput/SearchInput";
+import { CountryCard } from "../../components/CountryCard/CountryCard";
 
-const AllCountries = () => {
-  const [allCountries, setAllCountries] = useState([]);
-  const [isLoading, setIsLoading] = useState("true");
-  const [errorMsg, setErrorMsg] = useState("");
-
-  const getAllCountries = async () => {
-    try {
-      const controller = new AbortController();
-      //   const response = await axios.get("contriesApiURL");
-      const response = await axios.get(contriesApiURL);
-      console.log(response.data.data);
-      setAllCountries(response.data.data);
-      setIsLoading(false);
-    } catch (err) {
-      console.log(err);
-      setIsLoading(false);
-      setErrorMsg(`Not able to show the data,  ${err.message}`);
-    }
-  };
+const AllContries = () => {
+  const {
+    isLoading,
+    getAllCountriesData,
+    allContriesData,
+    filteredCountriesData,
+  } = useAppContext();
 
   useEffect(() => {
-    getAllCountries();
+    getAllCountriesData();
   }, []);
+
   return (
     <>
-      Country
-      {isLoading && !errorMsg && <h4>Loading</h4>}
-      {errorMsg && !isLoading && <NotFound errorMsg={errorMsg} />}
+      <SearchInput />
+      {isLoading && "Loading........"}
+      {allContriesData &&
+        filteredCountriesData.map((country, idx) => (
+          <CountryCard
+            flag={country.flag}
+            name={country.name}
+            currency={country.currency}
+            dialCode={country.dialCode}
+            key={idx}
+          />
+        ))}
     </>
   );
 };
 
-export default AllCountries;
+export default AllContries;
