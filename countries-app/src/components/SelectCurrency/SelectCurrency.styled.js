@@ -5,14 +5,14 @@ const CustomSelectContainer = styled.div`
 
   .select-selected {
     background-color: ${({ theme }) => theme.colors.btnBg};
-    color: ${({ theme }) => theme.colors.btnTxt}
-
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.btnBgHover};
-      color: ${({ theme }) => theme.colors.btnTxt};
-    }
+    color: ${({ theme }) => theme.colors.btnTxt};
   }
-  
+
+  .select-selected:hover {
+    background-color: ${({ theme }) => theme.colors.btnBgHover};
+    color: ${({ theme }) => theme.colors.btnTxt};
+  }
+
   .select-selected:after {
     position: absolute;
     content: "";
@@ -31,7 +31,6 @@ const CustomSelectContainer = styled.div`
 
   .select-items div,
   .select-selected {
-    
     padding: 8px 8px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
