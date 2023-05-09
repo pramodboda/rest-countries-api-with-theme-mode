@@ -10,9 +10,10 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 
 const CountryPage = () => {
   const { name } = useParams();
+  // const { currency } = useParams();
   const { allCountriesData } = useAppContext();
 
-  const [currency, setCurrency] = useState("");
+  const [currencyCode, setCurrencyCode] = useState("");
   const [dialCode, setDialCode] = useState("");
   const [flag, setFlag] = useState("");
   const [cName, setCName] = useState("");
@@ -23,16 +24,16 @@ const CountryPage = () => {
     }
   }, []);
   const getCountry = async (param) => {
-    console.log(allCountriesData);
+    // console.log(allCountriesData);
     const lowerSearch = param.toLowerCase();
     const cData = await allCountriesData.filter((country) =>
       country.name.toLowerCase().includes(lowerSearch)
     );
 
     // Main problem is here -> cData
-    console.log("cData:", cData);
+    // console.log("cData:", cData);
 
-    await setCurrency(cData[0].currency);
+    await setCurrencyCode(cData[0].currency);
     await setDialCode(cData[0].dialCode);
     await setFlag(cData[0].flag);
     await setCName(cData[0].name);
@@ -54,7 +55,7 @@ const CountryPage = () => {
           <CountryPageLayout
             name={cName}
             flag={flag}
-            currency={currency}
+            currency={currencyCode}
             dialcode={dialCode}
           />
         )}

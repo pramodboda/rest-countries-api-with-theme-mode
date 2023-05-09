@@ -1,25 +1,25 @@
 import styled from "styled-components";
 
 const CountryCardContainer = styled.div`
-  // border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-
-  // display: flex;
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.25);
   width: 23.2%;
   background-color: ${({ theme }) => theme.colors.cardBg};
-  // flex-grow: 1;
 
   a {
     text-decoration: none;
   }
+
   .country-card-flag-image {
     width: 100%;
+    height: 150px;
+    object-fit: cover;
   }
 
   .country-card-broken-image {
     width: 100%;
+
     padding: 25px 50px 0 50px;
     opacity: 0.5;
   }
