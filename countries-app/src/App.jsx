@@ -13,7 +13,6 @@ function App() {
         <Route path="/" element={<AllCountries />} />
         <Route path="*" element={<PageNotFound />} />
         <Route path="/country/:name" element={<CountryPage />} />
-        {/* <Route path="/country/:code" element={<CountryInfo />} /> */}
       </Routes>
     </>
   );
