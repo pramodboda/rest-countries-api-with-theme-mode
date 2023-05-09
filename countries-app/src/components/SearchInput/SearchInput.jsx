@@ -1,15 +1,24 @@
 import { useAppContext } from "../../context/AppContext";
 
-export const SearchInput = () => {
-  const { searchByInpVal, setSearchByInpVal } = useAppContext();
+import { SearchInputContainer } from "./SearchInput.styled";
+const SearchInput = () => {
+  const { search, setSearch } = useAppContext();
 
   const searchHandler = (e) => {
     console.log(e.target.value);
-    setSearchByInpVal(e.target.value);
+    setSearch(e.target.value);
   };
   return (
     <>
-      <input onChange={searchHandler} value={searchByInpVal}  />
+      <SearchInputContainer>
+        <input
+          onChange={searchHandler}
+          value={search}
+          placeholder="Search for country"
+        />
+      </SearchInputContainer>
     </>
   );
 };
+
+export default SearchInput;

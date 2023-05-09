@@ -1,14 +1,28 @@
-const CountryPageLayout = ({ name, flag }) => {
+import {
+  CountryPageWrapper,
+  CountryPageLeft,
+  CountryPageRight,
+} from "./CountryPageLayout.styled";
+
+const CountryPageLayout = ({ name, flag, currency, dialcode }) => {
   return (
     <>
-      <div>
-        <div>
-          <img src={flag} alt={name} />
-        </div>
-        <div>
+      <CountryPageWrapper>
+        <CountryPageLeft>
+          <div className="country-flag">
+            <img src={flag} alt={name} />
+          </div>
+        </CountryPageLeft>
+        <CountryPageRight>
           <h1>{name}</h1>
-        </div>
-      </div>
+          <p>
+            <strong>Currency:</strong> {currency}
+          </p>
+          <p>
+            <strong>Dial Code:</strong> {dialcode}
+          </p>
+        </CountryPageRight>
+      </CountryPageWrapper>
     </>
   );
 };
