@@ -40,10 +40,12 @@ const AppProvider = ({ children }) => {
 
   const lowerSearch = search.toLowerCase();
 
-  let filteredCountriesData = allCountriesData.filter(
-    (country) =>
-      country.name.toLowerCase().includes(lowerSearch) ||
-      country.dialCode === search
+  let filteredCountriesData = allCountriesData.filter((country) =>
+    country.currency
+      ? country.name.toLowerCase().includes(lowerSearch) ||
+        country.dialCode === search ||
+        country.currency.toLowerCase().includes(lowerSearch)
+      : ""
   );
 
   return (

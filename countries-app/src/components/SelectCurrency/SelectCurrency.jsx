@@ -16,14 +16,17 @@ const SelectCurrency = () => {
         onChange={selectCurrencyHandler}
         defaultValue={""}
       >
-        <option value="" disabled>
-          Fliter by Currency:
-        </option>
-        <option value="India">INR</option>
-        <option value="United States">USD</option>
-        <option value="China">CNY</option>
-        <option value="Japan">JPY</option>
-        <option value="Switzerland">CHF</option>
+        <option value="">Choose by currency</option>
+        <option value="INR">INR</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="CHF">CHF</option>
+        <option value="KYD">KYD</option>
+        <option value="GIP">GIP</option>
+        <option value="GBP">GBP</option>
+        <option value="JOD">JOD</option>
+        <option value="OMR">OMR</option>
+        <option value="BHD">BHD</option>
       </select>
     </CustomSelectContainer>
   );
